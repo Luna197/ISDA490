@@ -30,11 +30,12 @@ exports.index = function (req, res) {
             if(count == 1)
             {tasks = tasks.length}
 
-            res.json({
-                status: "success",
-                message: "Users retrieved successfully",
-                data: tasks,
-            });
+            // res.json({
+            //     status: "success",
+            //     message: "Users retrieved successfully",
+            //     data: tasks,
+            // });
+            res.render('tasks.ejs', {tasksData: tasks})
         }
     })  
 };

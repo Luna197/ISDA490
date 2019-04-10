@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include partials/head %>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <% include partials/header %>
+            </header>
+
+            <main>
+                <h1>About Users</h1>
+
+
+  <ul class="users">
+      <% for(var i=0; i<usersData.length; i++) {%>
+        <li class="user">
+          <h2>User Name: <%= usersData[i].name %></h2>
+          <h3>User Email: <%= usersData[i].email %></h3>
+          <h3>User Pending Tasks: <%= usersData[i].pendingTasks %></h3>
+        </li>
+      <% } %>
+      </ul>
+            </main>
+
+            <footer>
+                <% include partials/footer %>
+            </footer>
+        </div>
+    </body>
+</html>

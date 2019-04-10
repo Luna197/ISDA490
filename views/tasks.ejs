@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include partials/head %>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <% include partials/header %>
+            </header>
+
+            <main>
+                <h1>About Tasks</h1>
+
+
+  <ul class="users">
+      <% for(var i=0; i<tasksData.length; i++) {%>
+        <li class="user">
+          <h2>User Name: <%= tasksData[i].assignedUserName %></h2>
+          <h3>Task Name: <%= tasksData[i].name %></h3>
+          <span>Description: <%= tasksData[i].description %></span>
+          <h3>Deadline: <%= tasksData[i].deadline %></h3>
+          <h4>Completed: <%= tasksData[i].completed %></h4>
+        </li>
+      <% } %>
+      </ul>
+            </main>
+
+            <footer>
+                <% include partials/footer %>
+            </footer>
+        </div>
+    </body>
+</html>

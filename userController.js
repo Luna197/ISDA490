@@ -3,7 +3,9 @@
 User = require('./userModel');
 Task = require('./taskModel');
 // Handle index actions
-exports.index = function (req, res) {
+exports.index = ((req, res) => {
+    // res.sendFile(__dirname + '/index.html')
+
     let where  = req.query.where
     let sort = req.query.sort
     let select = req.query.select
@@ -28,15 +30,18 @@ exports.index = function (req, res) {
         else{
             if(count == 1)
             {users = users.length}
+
+            // res.json({
+            //     status: "success",
+            //     message: "Users retrieved successfully",
+            //     data: users,
+            // });
+
+            res.render('users.ejs', {usersData: users})
             
-            res.json({
-                status: "success",
-                message: "Users retrieved successfully",
-                data: users,
-            });
         }
     })  
-};
+});
 // Handle create user actions
 exports.new = ((req, res) => {
     var user = new User();

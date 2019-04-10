@@ -21,8 +21,15 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
+    "ejs": "^2.6.1",
     "express": "^4.15.3",
+    "express-ejs-layouts": "^2.5.0",
     "mongoose": "^5.4.18",
     "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   }
 }

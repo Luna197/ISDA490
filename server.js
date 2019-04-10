@@ -7,6 +7,25 @@ var express = require('express'),
 let apiRoutes = require("./api-routes")
 // Create our Express application
 var app = express();
+var stylus = require('stylus')
+var nib = require('nib')
+var ejsLayouts = require('express-ejs-layouts')
+
+app.set('view engine', 'ejs')
+
+
+function compile(str, path) {
+    return stylus(str)
+        .set('filename', path)
+        .use(nib())
+}
+
+
+// tell node to compile.styl-files to normal css-files
+app.use(stylus.middleware({
+    src: __dirname + '/public',
+    compile: compile
+}))
 
 // Use environment defined port or 4000
 var port = process.env.PORT || 4000;
@@ -31,8 +50,11 @@ app.use(bodyParser.json());
 
 // Use routes as a module (see index.js)
 // require('./routes')(app, router);
-app.use('/api', apiRoutes)
+app.use('/', apiRoutes)
 
+
+
+app.use(express.static(__dirname + '/public'))
 // Start the server
 app.listen(port);
 console.log('Server running on port ' + port);
