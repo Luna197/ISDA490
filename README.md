@@ -1,7 +1,6 @@
-# MP #3: APIed Piper
-### Due: April 1st, 2019, 11.59PM CDT
+# IS409DA: TO DO List Simple Web Application
 
-## Table of Contents
+<!-- ## Table of Contents
 1. [Assignment](#assignment)
 2. [Tips](#tips)
 3. [Rules](#rules)
@@ -138,7 +137,7 @@ Contains sample task descriptions. Edit if you want, I don't care.
 ## Rules
 1. This is an individual assignment. No collaboration is permitted.
 2. It is not permitted to copy/paste code that is not your own. You are, however, free to look at different code sources for inspiration and clarity. All sources (code as well as reading material) that you reference to complete this assignment must be declared in the submission.
-3. If you think something you’re doing might not be acceptable, please ask on Piazza.
+3. If you think something you’re doing might not be acceptable, please ask on Piazza. -->
 
 ## Environment Setup Guide
 1. Clone the repository:
