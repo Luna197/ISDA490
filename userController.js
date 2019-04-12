@@ -38,9 +38,9 @@ exports.index = ((req, res) => {
             // });
 
             res.render('users.ejs', {usersData: users})
-            
+
         }
-    })  
+    })
 });
 // Handle create user actions
 exports.new = ((req, res) => {
@@ -48,7 +48,7 @@ exports.new = ((req, res) => {
     user.name = req.body.name ? req.body.name : user.name;
     user.email = req.body.email;
     user.pendingTasks  = req.body.pendingTasks;
-    
+
 // save the user and check for errors
     user.save(function (err) {
         if (err)
@@ -111,7 +111,7 @@ exports.update = ((req, res) => {
 exports.delete = ((req, res) => {
     User.findByIdAndDelete(req.params.user_id, (err, user) => {
         // As always, handle any potential errors:
-        if (err) 
+        if (err)
             res.status(404).send(err);
         else if ( user == null){
             res.status(404).send({

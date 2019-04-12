@@ -58,3 +58,23 @@ app.use(express.static(__dirname + '/public'))
 // Start the server
 app.listen(port);
 console.log('Server running on port ' + port);
+
+var Tasks=mongoose.model('Task',{
+    name: String,
+    description: String,
+    dealine:String,
+    complete:String
+})
+
+app.post('/tasks',(req,res) =>{
+    var task= new Tasks(req.body)
+
+    message.save((err) => {
+    if (err)
+        sendStatus(500)
+
+    message.push(req.body)
+    res.sendStatus(200)
+
+  })  
+})

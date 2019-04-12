@@ -37,7 +37,7 @@ exports.index = function (req, res) {
             // });
             res.render('tasks.ejs', {tasksData: tasks})
         }
-    })  
+    })
 };
 // Handle create task actions
 exports.new = ((req, res) => {

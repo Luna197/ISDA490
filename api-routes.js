@@ -38,5 +38,3 @@ router.route('/tasks/:task_id')
     .delete(taskController.delete);
 // Export API routes
 module.exports = router;
-
-
